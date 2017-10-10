@@ -2,7 +2,17 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.0</TargetFramework>
+
   </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="Dockerfile" CopyToPublishDirectory="PreserveNewest" />
+    <!--<Content Include=".dockerignore" CopyToPublishDirectory="PreserveNewest" />
+    <Content Include="Easynvest.SimulatorCalc.Api.csproj" CopyToPublishDirectory="PreserveNewest" />
+    <Content Include="..\Easynvest.SimulatorCalc.Application\Easynvest.SimulatorCalc.Application.csproj" CopyToPublishDirectory="PreserveNewest" />
+    <Content Include="..\Easynvest.SimulatorCalc.Domain\Easynvest.SimulatorCalc.Domain.csproj" CopyToPublishDirectory="PreserveNewest" />
+    <Content Include="..\Easynvest.SimulatorCalc.Repository\Easynvest.SimulatorCalc.Repository.csproj" CopyToPublishDirectory="PreserveNewest" />-->
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="MediatR" Version="3.0.1" />
