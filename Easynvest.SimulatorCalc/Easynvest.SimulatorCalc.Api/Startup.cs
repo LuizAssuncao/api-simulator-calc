@@ -12,6 +12,7 @@ using System;
 using Easynvest.SimulatorCalc.Domain.Interpolation;
 using Easynvest.SimulatorCalc.Domain.Investment;
 using Easynvest.SimulatorCalc.Domain;
+using Microsoft.Extensions.Logging;
 
 namespace Easynvest.SimulatorCalc.Api
 {
@@ -47,12 +48,15 @@ namespace Easynvest.SimulatorCalc.Api
             services.AddScoped<IInvestmentSimulator, InvestmentSimulator>();
         }
 
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            app.UseDeveloperExceptionPage();
+            loggerFactory.AddAWSProvider(Configuration.GetAWSLoggingConfigSection());
 
             app.UseMvc();
             app.Run(async context =>
